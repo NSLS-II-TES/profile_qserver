@@ -1,0 +1,42 @@
+ 1000  conda activate 2023-1.3-py310-tiled
+ 1001  qserver environment open
+ 1002  git status
+ 1003  qserver starus
+ 1004  qserver status
+ 1005  qserver plans
+ 1006  qserver -h
+ 1007  qserver existing plans
+ 1008  qserver allowed plans
+ 1009  qserver -h
+ 1010  qserver list 
+ 1011  qserver-list-plans-devices 
+ 1012  qserver-list-plans-devices -h
+ 1013  qserver-list-plans-devices --startup-dir=~/.ipython/profile_test/startup --file-dir ~/.ipython/profile_test/
+ 1014  ls -al
+ 1015  vi existing_plans_and_devices.yaml 
+ 1016  qserver environment open
+ 1017  qserver allowed plans
+ 1018  qserver environment open
+ 1019  qserver allowed plans
+ 1020  qserver environment open
+ 1021  qserver status
+ 1022  qserver -h
+ 1023  qserver permissions get 
+ 1024  qserver environment open
+ 1025  qserver permissions get 
+ 1026  cd startup/
+ 1027  wget https://raw.githubusercontent.com/bluesky/bluesky-queueserver/main/bluesky_queueserver/profile_collection_sim/user_group_permissions.yaml
+ 1028  ls -al
+ 1029  qserver environment open
+ 1030  qserver status
+ 1031  qserver allowed plans
+ 1032  qserver allowed devices
+ 1033  qserver queue get
+ 1034  qserver queue add plan '{"name": "take_tes_background"}'
+ 1035  qserver status
+ 1036  qserver queue get
+ 1037  qserver queue start
+ 1038  qserver environment open
+ 1039  qserver queue add plan '{"name": "take_tes_background"}'
+ 1040  qserver queue start
+

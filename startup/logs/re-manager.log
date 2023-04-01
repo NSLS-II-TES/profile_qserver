@@ -1,0 +1,113 @@
+(2023-1.3-py310-tiled) [xf08bm@xf08bm-ws2 startup]$ PYTHONPATH=$BS_PYTHONPATH AUTOALIGNMENT=yes start-re-manager --keep-re --startup-profile=test --redis-addr=epics-services-tes
+[I 2023-04-01 18:54:27,880 bluesky_queueserver.manager.start_manager] RE Manager configuration:
+    zmq_control_addr: 'tcp://*:60615'
+    zmq_private_key: None
+    zmq_info_addr: 'tcp://*:60625'
+    zmq_publish_console: False
+    redis_addr: 'epics-services-tes'
+    keep_re: True
+    existing_plans_and_devices_path: None
+    user_group_permissions_path: None
+    startup_dir: '/home/xf08bm/.ipython/profile_test/startup'
+    startup_module: None
+    startup_script: None
+    print_console_output: True
+    console_logging_level: 20
+    update_existing_plans_devices: 'ENVIRONMENT_OPEN'
+    user_group_permissions_reload: 'ON_STARTUP'
+    emergency_lock_key: None
+    use_persistent_metadata: False
+    kafka_server: '127.0.0.1:9092'
+    kafka_topic: None
+    zmq_data_proxy_addr: None
+    databroker_config: None
+
+[I 2023-04-01 18:54:27,881 bluesky_queueserver.manager.manager] Starting ZMQ server at 'tcp://*:60615'
+[I 2023-04-01 18:54:27,881 bluesky_queueserver.manager.manager] ZMQ control channels: encryption disabled
+[I 2023-04-01 18:54:27,885 bluesky_queueserver.manager.manager] Starting RE Manager process
+[I 2023-04-01 18:54:27,915 bluesky_queueserver.manager.manager] Loading the lists of allowed plans and devices ...
+[I 2023-04-01 18:54:27,923 bluesky_queueserver.manager.manager] Starting ZeroMQ server ...
+[I 2023-04-01 18:54:27,924 bluesky_queueserver.manager.manager] ZeroMQ server is waiting on tcp://*:60615
+[I 2023-04-01 18:54:40,610 bluesky_queueserver.manager.manager] Opening the new RE environment ...
+[I 2023-04-01 18:54:40,611 bluesky_queueserver.manager.start_manager] Starting RE Worker ...
+[I 2023-04-01 18:54:40,614 bluesky_queueserver.manager.manager] Waiting for RE worker to start ...
+[I 2023-04-01 18:54:42,277 bluesky_queueserver.manager.profile_ops] Loading RE Worker startup code from directory '/home/xf08bm/.ipython/profile_test/startup' ...
+[I 2023-04-01 18:54:42,278 bluesky_queueserver.manager.profile_ops] Startup directory: '/home/xf08bm/.ipython/profile_test/startup'
+[I 2023-04-01 18:54:42,279 bluesky_queueserver.manager.profile_ops] Loading startup file '/home/xf08bm/.ipython/profile_test/startup/00-base.py' ...
+OBJECT CACHE: Will use up to 10_074_848_870 bytes (15% of total physical RAM)
+INFO:tiled.server.object_cache:Will use up to 10_074_848_870 bytes (15% of total physical RAM)
+[I 2023-04-01 18:54:48,096 bluesky_queueserver.manager.profile_ops] Loading startup file '/home/xf08bm/.ipython/profile_test/startup/01-shutter.py' ...
+[I 2023-04-01 18:54:48,098 bluesky_queueserver.manager.profile_ops] Loading startup file '/home/xf08bm/.ipython/profile_test/startup/02-cam.py' ...
+[I 2023-04-01 18:54:48,265 bluesky_queueserver.manager.profile_ops] Loading startup file '/home/xf08bm/.ipython/profile_test/startup/03-plans.py' ...
+reloaded!
+[I 2023-04-01 18:54:50,387 bluesky_queueserver.manager.worker] Startup code loading was completed
+[I 2023-04-01 18:54:50,387 bluesky_queueserver.manager.worker] Generating lists of allowed plans and devices
+[I 2023-04-01 18:54:50,388 bluesky_queueserver.manager.worker] List of allowed plans and devices was successfully generated
+[I 2023-04-01 18:54:50,394 bluesky_queueserver.manager.profile_ops] Updating the list of existing plans and devices in the file '/home/xf08bm/.ipython/profile_test/startup/existing_plans_and_devices.yaml'
+[I 2023-04-01 18:54:50,398 bluesky_queueserver.manager.worker] Instantiating and configuring Run Engine ...
+[I 2023-04-01 18:54:50,399 bluesky_queueserver.manager.worker] RE Environment is ready
+[I 2023-04-01 18:54:50,707 bluesky_queueserver.manager.manager] Downloading the lists of existing plans and devices from the worker environment
+[I 2023-04-01 18:54:50,707 bluesky_queueserver.manager.manager] Worker started successfully.
+[I 2023-04-01 18:55:02,608 bluesky_queueserver.manager.manager] Adding new item to the queue ...
+[I 2023-04-01 18:55:02,611 bluesky_queueserver.manager.manager] Item added: success=True item_type='plan' name='take_tes_background' item_uid='1a1f3b87-aa94-4755-b6f4-a94bb046959c' qsize=2.
+[I 2023-04-01 18:55:21,851 bluesky_queueserver.manager.manager] Starting queue processing ...
+[I 2023-04-01 18:55:21,852 bluesky_queueserver.manager.manager] Processing the next queue item: 2 plans are left in the queue.
+[I 2023-04-01 18:55:21,857 bluesky_queueserver.manager.manager] Starting the plan:
+{'name': 'take_tes_background',
+ 'args': [],
+ 'kwargs': {},
+ 'user': 'qserver-cli',
+ 'user_group': 'primary',
+ 'meta': {},
+ 'item_uid': 'd79dc056-5552-4247-9ff9-a985afbc1788'}.
+[I 2023-04-01 18:55:21,858 bluesky_queueserver.manager.worker] Starting execution of a plan ...
+[I 2023-04-01 18:55:21,858 bluesky_queueserver.manager.worker] Starting a plan 'take_tes_background'.
+[I 2023-04-01 18:55:24,003 bluesky_queueserver.manager.plan_monitoring] New run was open: '76f3561e-9e8b-4bf9-a100-8e00e1ae0225'
+
+
+Transient Scan ID: 1     Time: 2023-04-01 18:55:23
+Persistent Unique Scan ID: '76f3561e-9e8b-4bf9-a100-8e00e1ae0225'
+New stream: 'primary'
++-----------+------------+--------------+
+|   seq_num |       time | vstream_mean |
++-----------+------------+--------------+
+|         1 | 18:55:24.5 |       92.903 |
+Run was closed: '76f3561e-9e8b-4bf9-a100-8e00e1ae0225'
++-----------+------------+--------------+
+generator count ['76f3561e'] (scan num: 1)
+
+
+
+[I 2023-04-01 18:55:36,611 bluesky_queueserver.manager.worker] The plan was exited. Plan state: completed
+[I 2023-04-01 18:55:36,860 bluesky_queueserver.manager.manager] Processing the next queue item: 1 plans are left in the queue.
+[I 2023-04-01 18:55:36,863 bluesky_queueserver.manager.manager] Starting the plan:
+{'name': 'take_tes_background',
+ 'args': [],
+ 'kwargs': {},
+ 'user': 'qserver-cli',
+ 'user_group': 'primary',
+ 'meta': {},
+ 'item_uid': '1a1f3b87-aa94-4755-b6f4-a94bb046959c'}.
+[I 2023-04-01 18:55:36,864 bluesky_queueserver.manager.worker] Starting execution of a plan ...
+[I 2023-04-01 18:55:36,864 bluesky_queueserver.manager.worker] Starting a plan 'take_tes_background'.
+[I 2023-04-01 18:55:38,944 bluesky_queueserver.manager.plan_monitoring] New run was open: 'a017ecec-57f8-4a66-882d-cf62381aa596'
+
+
+Transient Scan ID: 2     Time: 2023-04-01 18:55:38
+Persistent Unique Scan ID: 'a017ecec-57f8-4a66-882d-cf62381aa596'
+New stream: 'primary'
++-----------+------------+--------------+
+|   seq_num |       time | vstream_mean |
++-----------+------------+--------------+
+|         1 | 18:55:39.2 |       93.000 |
+Run was closed: 'a017ecec-57f8-4a66-882d-cf62381aa596'
++-----------+------------+--------------+
+generator count ['a017ecec'] (scan num: 2)
+
+
+
+[I 2023-04-01 18:55:51,349 bluesky_queueserver.manager.worker] The plan was exited. Plan state: completed
+[I 2023-04-01 18:55:51,405 bluesky_queueserver.manager.manager] No items are left in the queue.
+[I 2023-04-01 18:55:51,405 bluesky_queueserver.manager.manager] Queue is empty.
+
+
