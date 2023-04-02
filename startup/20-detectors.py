@@ -11,7 +11,7 @@ import numpy as np
 from area_detector_handlers.handlers import HandlerBase
 from event_model import compose_resource
 from ophyd import Component as Cpt
-from ophyd import Device, Signal
+from ophyd import Device, Signal, EpicsSignal
 from ophyd.sim import NullStatus, new_uid
 
 logger = logging.getLogger("vstream")
@@ -162,3 +162,5 @@ vstream = VideoStreamDet(
     name="vstream",
 )
 vstream.exposure_time.put(0.25)
+
+I0 = EpicsSignal("XF:08BMES-BI{PSh:1-BPM:3}V-I", name="I0")
