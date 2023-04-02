@@ -109,5 +109,3 @@ generator count ['a017ecec'] (scan num: 2)
 [I 2023-04-01 18:55:51,349 bluesky_queueserver.manager.worker] The plan was exited. Plan state: completed
 [I 2023-04-01 18:55:51,405 bluesky_queueserver.manager.manager] No items are left in the queue.
 [I 2023-04-01 18:55:51,405 bluesky_queueserver.manager.manager] Queue is empty.
-
-

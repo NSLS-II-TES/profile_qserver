@@ -1,8 +1,8 @@
 import datetime
+import itertools
 import logging
 import time as ttime
 from collections import deque
-import itertools
 from pathlib import Path
 
 import cv2
@@ -11,7 +11,7 @@ import numpy as np
 from area_detector_handlers.handlers import HandlerBase
 from event_model import compose_resource
 from ophyd import Component as Cpt
-from ophyd import Device, Signal, EpicsSignal
+from ophyd import Device, EpicsSignal, Signal
 from ophyd.sim import NullStatus, new_uid
 
 logger = logging.getLogger("vstream")
@@ -73,8 +73,7 @@ class VideoStreamDet(Device):
         )
 
         self._data_file = str(
-            Path(self._resource_document["root"])
-            / Path(self._resource_document["resource_path"])
+            Path(self._resource_document["root"]) / Path(self._resource_document["resource_path"])
         )
 
         # now discard the start uid, a real one will be added later
@@ -85,13 +84,14 @@ class VideoStreamDet(Device):
 
         self._h5file_desc = h5py.File(self._data_file, "x")
         group = self._h5file_desc.create_group("/entry")
-        self._dataset = group.create_dataset("averaged",
-                                             data=np.full(fill_value=np.nan,
-                                                          shape=(1, *self._frame_shape)),
-                                             maxshape=(None, *self._frame_shape),
-                                             chunks=(1, *self._frame_shape),
-                                             dtype="float64",
-                                             compression="lzf")
+        self._dataset = group.create_dataset(
+            "averaged",
+            data=np.full(fill_value=np.nan, shape=(1, *self._frame_shape)),
+            maxshape=(None, *self._frame_shape),
+            chunks=(1, *self._frame_shape),
+            dtype="float64",
+            compression="lzf",
+        )
         self._counter = itertools.count()
 
     def trigger(self, *args, **kwargs):

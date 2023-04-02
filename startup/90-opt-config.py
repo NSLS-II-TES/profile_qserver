@@ -2,7 +2,7 @@ from bloptools import gp
 
 kb_dofs = np.array([kbv.ush, kbv.dsh, kbh.ush, kbh.dsh])
 
-rel_bounds = {  
+rel_bounds = {
     "kbv_ush": [-1e-1, +1e-1],
     "kbv_dsh": [-1e-1, +1e-1],
     "kbh_ush": [-1e-1, +1e-1],
@@ -33,7 +33,16 @@ hard_bounds = np.r_[[fid_params[dof.name] + 1 * np.array(rel_bounds[dof.name]) f
 print(f"{dofs = }")
 print(f"{hard_bounds = }")
 
-bo = gp.BayesianOptimizer(detectors=[vstream, I0], shutter=psh, mode="tes", db=db, dofs=dofs, dof_bounds=hard_bounds, verbose=True)
+bo = gp.BayesianOptimizer(
+    detectors=[vstream, I0],
+    shutter=psh,
+    mode="tes",
+    db=db,
+    dofs=dofs,
+    dof_bounds=hard_bounds,
+    verbose=True,
+)
+
 
 def bo_initialize(*args, **kwargs):
     """
