@@ -163,4 +163,21 @@ vstream = VideoStreamDet(
 )
 vstream.exposure_time.put(0.25)
 
+
+# This is not needed with tiled/databroker 2.0+ (done via the `tiled-site-config` repo).
+class VideoStreamHDF5Handler(HandlerBase):
+    specs = {"VIDEO_STREAM_HDF5"}
+
+    def __init__(self, filename):
+        self._name = filename
+
+    def __call__(self, frame):
+        with h5py.File(self._name, "r") as f:
+            entry = f["/entry/averaged"]
+            return entry[frame, :]
+
+
+db.reg.register_handler("VIDEO_STREAM_HDF5", VideoStreamHDF5Handler, overwrite=True)
+
+
 I0 = EpicsSignal("XF:08BMES-BI{PSh:1-BPM:3}V-I", name="I0")

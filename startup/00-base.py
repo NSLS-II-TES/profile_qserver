@@ -6,6 +6,7 @@ import bluesky.plans as bp
 from bluesky import RunEngine
 from bluesky.callbacks.best_effort import BestEffortCallback
 from databroker import Broker
+from nslsii import configure_kafka_publisher
 
 RE = RunEngine({})
 
@@ -14,3 +15,4 @@ bec = BestEffortCallback()
 
 RE.subscribe(db.insert)
 RE.subscribe(bec)
+res = configure_kafka_publisher(RE, beamline_name="tes")

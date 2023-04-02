@@ -33,7 +33,7 @@ hard_bounds = np.r_[[fid_params[dof.name] + 1 * np.array(rel_bounds[dof.name]) f
 print(f"{dofs = }")
 print(f"{hard_bounds = }")
 
-bo = gp.BayesianOptimizer(
+boa = gp.BayesianOptimizationAgent(
     detectors=[vstream, I0],
     shutter=psh,
     mode="tes",
@@ -44,37 +44,37 @@ bo = gp.BayesianOptimizer(
 )
 
 
-def bo_initialize(*args, **kwargs):
+def boa_initialize(*args, **kwargs):
     """
     Example call
     ------------
-        bo.initialize(init_scheme="quasi-random", n_init=4)
+        boa.initialize(init_scheme="quasi-random", n_init=4)
     """
-    yield from bo.initialize(*args, **kwargs)
+    yield from boa.initialize(*args, **kwargs)
 
 
-def bo_go_to(*args, **kwargs):
+def boa_go_to(*args, **kwargs):
     """
     Example call
     ------------
-        bo.go_to(x)
+        boa.go_to(x)
     """
-    yield from bo.go_to(*args, **kwargs)
+    yield from boa.go_to(*args, **kwargs)
 
 
-def bo_go_to_optimum(*args, **kwargs):
+def boa_go_to_optimum(*args, **kwargs):
     """
     Example call
     ------------
-        bo.go_to_optimum()
+        boa.go_to_optimum()
     """
-    yield from bo.go_to_optimum(*args, **kwargs)
+    yield from boa.go_to_optimum(*args, **kwargs)
 
 
-def bo_learn(*args, **kwargs):
+def boa_learn(*args, **kwargs):
     """
     Example call
     ------------
-        bo.learn(strategy, n_iter=1, n_per_iter=1, reuse_hypers=True, upsample=1, verbose=True, plots=[], **kwargs)
+        boa.learn(strategy, n_iter=1, n_per_iter=1, reuse_hypers=True, upsample=1, verbose=True, plots=[], **kwargs)
     """
-    yield from bo.learn(*args, **kwargs)
+    yield from boa.learn(*args, **kwargs)
