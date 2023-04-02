@@ -603,9 +603,51 @@ existing_devices:
     is_readable: true
     module: startup_script
 existing_plans:
+  bo_go_to:
+    module: startup_script
+    name: bo_go_to
+    parameters:
+    - kind:
+        name: VAR_POSITIONAL
+        value: 2
+      name: args
+    - kind:
+        name: VAR_KEYWORD
+        value: 4
+      name: kwargs
+    properties:
+      is_generator: true
+  bo_go_to_optimum:
+    module: startup_script
+    name: bo_go_to_optimum
+    parameters:
+    - kind:
+        name: VAR_POSITIONAL
+        value: 2
+      name: args
+    - kind:
+        name: VAR_KEYWORD
+        value: 4
+      name: kwargs
+    properties:
+      is_generator: true
   bo_initialize:
     module: startup_script
     name: bo_initialize
+    parameters:
+    - kind:
+        name: VAR_POSITIONAL
+        value: 2
+      name: args
+    - kind:
+        name: VAR_KEYWORD
+        value: 4
+      name: kwargs
+    properties:
+      is_generator: true
+  bo_learn:
+    module: startup_script
+    name: bo_learn
     parameters:
     - kind:
         name: VAR_POSITIONAL
